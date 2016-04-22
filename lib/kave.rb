@@ -1,4 +1,7 @@
 require "kave/version"
+require "kave/send_request"
+require "kave/response"
+
 
 module Kave
   class << self
@@ -9,14 +12,6 @@ module Kave
     yield configuration
   end
 
-  # Configures the gem
-  #
-  # @example
-  #   Zarinpal.configure do |config|
-  #     config.merchant_id  = 'XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX'
-  #     config.callback_url = 'http://example.com/call_back'
-  #     config.client       = 'https://de.zarinpal.com/pg/services/WebGate/wsdl'
-  #   end
   class Configuration
     attr_accessor :api_key, :sender,:wsdl
 
