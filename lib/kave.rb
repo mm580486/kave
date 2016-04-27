@@ -13,7 +13,7 @@ module Kave
   end
 
   class Configuration
-    attr_accessor :api_key, :sender,:wsdl
+    attr_accessor :api_key, :sender,:wsdl,:username,:password
 
     def initialize
 

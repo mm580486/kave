@@ -1,11 +1,14 @@
 module Kave
   class Response
-    attr_reader :response, :status
-    def validate(response = nil)
+
+    attr_reader :response, :status,:statusmessage
+    def validate(response = nil,send_simple_by)
       @response = response
+      @send_simple_by=send_simple_by
       perform_validation
       return self
     end
+
     def valid?
       @valid
     end
@@ -13,13 +16,18 @@ module Kave
     private
     def perform_validation
       raise ArgumentError, 'not a valid response' if @response.nil?
-      body       = @response[:send_simple_by_apikey_response] 
+
+      body       = if @send_simple_by==:send_simple_by_apikey
+        @response[:send_simple_by_apikey_response] 
+      else
+        @response[:send_simple_by_login_info_response] 
+      end
       @status    = body[:status].to_i
-      @status_message    = body[:statusmessage].to_i
+      @statusmessage    = body[:statusmessage]
       unless @status == 200
         @valid = false
-     else
-      @valid=true
+      else
+        @valid=true
       end
 
     end
