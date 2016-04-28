@@ -13,13 +13,23 @@ gem 'kave'
 And then execute:
     $ bundle install
 
-Or install it yourself as:
-
+Or install it yourself(localy) as:
+```ruby
     $ gem install kave
+```
+And create init file on config directory(kave.rb):
 
+```ruby
+Kave.configure do |config|
+  config.wsdl ='http://api.kavenegar.com/soap/v1.asmx?WSDL'
+  config.sender  = 'number'
+  config.api_key = 'api key'
+end
+```
+[kavenegar.com](http://kavenegar.com/)
 ## Usage
 
-TODO: Write usage instructions here
+
 
 ## Development
 

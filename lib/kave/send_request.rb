@@ -6,7 +6,7 @@ module Kave
     attr_accessor :mobile, :message,:unixdate,:msgmode
     attr_reader   :response
 
-    def initialize(args = {unixdate:nil,msgmode:nil})
+    def initialize(args = {})
       args[:unixdate] ||= nil
       args[:msgmode] ||= nil
       @mobile      = args.fetch(:mobile)
