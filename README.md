@@ -11,11 +11,12 @@ gem 'kave'
 ```
 
 And then execute:
-    $ bundle install
-
+```
+$ bundle install
+```
 Or install it yourself(localy) as:
 ```ruby
-    $ gem install kave
+$ gem install kave
 ```
 And create init file on config directory(kave.rb):
 
@@ -23,26 +24,46 @@ And create init file on config directory(kave.rb):
 Kave.configure do |config|
   config.wsdl ='http://api.kavenegar.com/soap/v1.asmx?WSDL'
   config.sender  = 'number'
+
+# You can user api key or username and password for authinticate å
   config.api_key = 'api key'
+# OR
+  config.username = 'kave username'
+  config.password = 'kave password'
 end
 ```
-[kavenegar.com](http://kavenegar.com/)
+[kavenegar.com](http://kavenegar.com/) for recive api key !
 ## Usage
+alright ;) , now you can call kave function for send simply sms by loginfo or api key
+
+```ruby
+class HomeController < ApplicationController
+  def index
+
+  	request=Kave::SendRequest.new({
+   
+    message: 'سلام عزیز :)',
+    mobile: '09127105568',
+    #optional
+    unixdate: by default 0 ,
+    msgmode: by default 1
+})
+
+  	res=request.call
+  	render :text=>{status_message_only_farsi: res.statusmessage,status_code: res.status}
+  end
+end
 
 
+```
 
-## Development
+for report issues contact me on twitter [@mm580486](https://twitter.com/mm580486)
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake false` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+## persian tutorials 
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
-
-## Contributing
-
-Bug reports and pull requests are welcome on GitHub at https://github.com/mm580486/kave. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](contributor-covenant.org) code of conduct.
-
+1-[send simply sms by kave gem](https://twitter.com/mm580486)
 
 ## License
 
-The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
+The gem is available as open source under the terms of the [mohammad mahmoudi](https://twitter.com/mm580486) and [kave negar](http://kavenegar.com/support/about) .
 
