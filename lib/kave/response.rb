@@ -36,17 +36,15 @@ module Kave
   class ResponseLatestOutBox
 
     attr_reader :response, :select
-
     def validate(response = nil,send_latest_by)
       @response = response
       @send_simple_by=send_latest_by
       perform_validation
       return self
     end
-
-
     private
     def perform_validation
+      raise ArgumentError, 'not a valid response' if @response.nil?
       body       =@response[:selectlatest_by_apikey_response] 
       @select    = body[:selectlatest_by_apikey_result][:api_select]
     end
