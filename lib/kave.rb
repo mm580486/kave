@@ -16,7 +16,6 @@ module Kave
     attr_accessor :api_key, :sender,:wsdl,:username,:password
 
     def initialize
-
     end
 
   end

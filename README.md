@@ -1,6 +1,6 @@
 # Kave
 
-Kave negar offering advance sms servis for developer , you can send & recive sms in often services and app !
+Kave negar offering advance sms servis for developer , you can send & receive sms in often services and app !
 notice: this service only work in iran country
 ## Installation
 
@@ -25,14 +25,14 @@ Kave.configure do |config|
   config.wsdl ='http://api.kavenegar.com/soap/v1.asmx?WSDL'
   config.sender  = 'number'
 
-# You can user api key or username and password for authinticate å
+# You can user api key or username and password for authinticate 
   config.api_key = 'api key'
 # OR
   config.username = 'kave username'
   config.password = 'kave password'
 end
 ```
-[kavenegar.com](http://kavenegar.com/) for recive api key !
+[kavenegar.com](http://kavenegar.com/) for receiver api key !
 ## Usage
 alright ;) , now you can call kave function for send simply sms by loginfo or api key
 
@@ -40,7 +40,7 @@ alright ;) , now you can call kave function for send simply sms by loginfo or ap
 class HomeController < ApplicationController
   def index
 
-  	request=Kave::SendRequest.new({
+  	request=Kave::SendRequestSimple.new({
    
     message: 'سلام عزیز :)',
     mobile: '09127105568',
@@ -61,8 +61,9 @@ for report issues contact me on twitter [@mm580486](https://twitter.com/mm580486
 
 ## persian tutorials 
 
-1-[send simply sms by kave gem](https://twitter.com/mm580486)
+1-[youtube send simply sms by kave gem](https://twitter.com/mm580486)
 
+2-[callback status code](http://kavenegar.com/public/documents/soap-document.pdf)
 ## License
 
 The gem is available as open source under the terms of the [mohammad mahmoudi](https://twitter.com/mm580486) and [kave negar](http://kavenegar.com/support/about) .
