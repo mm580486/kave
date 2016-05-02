@@ -25,16 +25,16 @@ Kave.configure do |config|
   config.wsdl ='http://api.kavenegar.com/soap/v1.asmx?WSDL'
   config.sender  = 'number'
 
-# You can user api key or username and password for authinticate 
+# You can use api key or username and password for authinticate 
   config.api_key = 'api key'
 # OR
   config.username = 'kave username'
   config.password = 'kave password'
 end
 ```
-[kavenegar.com](http://kavenegar.com/) for receiver api key !
+[kavenegar.com](http://kavenegar.com/) for receive api key !
 ## Usage
-alright ;) , now you can call kave function for send simply sms by loginfo or api key
+alright ;) now you can call kave function for send simply sms by loginfo or api key
 
 ```ruby
 class HomeController < ApplicationController
@@ -58,6 +58,7 @@ end
 ```
 
 for report issues contact me on twitter [@mm580486](https://twitter.com/mm580486)
+
 
 ## persian tutorials 
 

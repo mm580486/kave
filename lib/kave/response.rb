@@ -15,7 +15,6 @@ module Kave
     private
     def perform_validation
       raise ArgumentError, 'not a valid response' if @response.nil?
-
       body       = if @send_simple_by==:send_simple_by_apikey
         @response[:send_simple_by_apikey_response] 
       else
@@ -32,20 +31,25 @@ module Kave
     end
   end
 
-
   class ResponseLatestOutBox
 
     attr_reader :response, :select
-    def validate(response = nil,send_latest_by)
+    def validate(response = nil,send_simple_by)
       @response = response
-      @send_simple_by=send_latest_by
+      @send_simple_by=send_simple_by
       perform_validation
       return self
     end
     private
     def perform_validation
       raise ArgumentError, 'not a valid response' if @response.nil?
-      body       =@response[:selectlatest_by_apikey_response] 
+
+       body = if @send_simple_by==:send_simple_by_apikey
+        @response[:selectlatest_by_apikey_response] 
+      else
+        @response[:selectlatest_by_login_info_response] 
+      end
+      # body       =@response[:selectlatest_by_apikey_response] 
       @select    = body[:selectlatest_by_apikey_result][:api_select]
     end
 
