@@ -52,18 +52,18 @@ module Kave
     end
 
     def call
-      @selectlatest_by=unless Kave.configuration.api_key.nil?
+      @send_latest_by=unless Kave.configuration.api_key.nil?
 :selectlatest_by_apikey
 else
 :selectlatest_by_login_info
 end
       @pagesize=if @pagesize < 2;2;else;@pagesize;end
-      response = @wsdl.call :selectlatest_by_apikey, message: {
+      response = @wsdl.call @send_latest_by, message: {
         'apikey' =>Kave.configuration.api_key,
         'pagesize'=>@pagesize.to_i,
         'sender' => Kave.configuration.sender
       }
-      @response.validate(response.body,@send_latest_by)
+      @response.validate(response.body,@send_latest_by )
     end
 
   end

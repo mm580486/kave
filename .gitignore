@@ -1,5 +1,6 @@
 /.bundle/
 /.yardoc
+*.gem
 /.idea/
 /Gemfile.lock
 /_yardoc/

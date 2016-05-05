@@ -9,8 +9,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["mohammad mahmoudi"]
   spec.email         = ["mm580486@gmail.com"]
 
-  spec.summary       = %q{Send SMS}
-  spec.description   = %q{Send SMS by kavenegar services}
+  spec.summary       = %q{Send SMS in iran}
+  spec.description   = %q{Send SMS by kavenegar services in iran}
   spec.homepage      = "https://github.com/mm580486/kave"
   spec.license       = "mohammad mahmoudi"
 
