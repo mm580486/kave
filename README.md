@@ -62,7 +62,7 @@ for report issues contact me on twitter [@mm580486](https://twitter.com/mm580486
 
 ## persian tutorials 
 
-1-[youtube send simply sms by kave gem](https://twitter.com/mm580486)
+1-[youtube send simply sms by kave gem](https://youtu.be/NXLnFwNJoC0)
 
 2-[callback status code](http://kavenegar.com/public/documents/soap-document.pdf)
 ## License

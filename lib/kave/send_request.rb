@@ -57,7 +57,7 @@ module Kave
 else
 :selectlatest_by_login_info
 end
-      @pagesize=if @pagesize < 2;2;else;@pagesize;end
+      @pagesize=if @pagesize.to_i < 2;2;else;@pagesize;end
       response = @wsdl.call @send_latest_by, message: {
         'apikey' =>Kave.configuration.api_key,
         'pagesize'=>@pagesize.to_i,
