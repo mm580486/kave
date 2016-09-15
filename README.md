@@ -1,6 +1,6 @@
 # Kave
 
-Kave negar offering advance sms servis for developer , you can send & receive sms in often services and app !
+Kave negar offering advance sms Service for developer's , you can send & receive sms in often services and app !
 notice: this service only work in iran country
 ## Installation
 
